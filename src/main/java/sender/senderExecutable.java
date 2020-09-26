@@ -17,7 +17,7 @@ public class senderExecutable {
 		String pwd=System.getProperty("user.dir");
 		Path p=Paths.get(pwd,"src","main","resources",file);
 		IUtilitiesForFootFallData v=new csvUtilitiesForFootFallData();
-		v.writeFootFallDataToConsole(p);
+		v.writeFootFallDataToConsoleAsAString(p);
 		}
 		catch(IOException e)
 		{

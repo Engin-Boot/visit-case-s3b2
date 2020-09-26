@@ -21,14 +21,20 @@ public class csvUtilitiesForFootFallData implements IUtilitiesForFootFallData {
 			return emptyList;
 		}
 	}
-	public void writeFootFallDataToConsole(Path pathToFootFallDataFile) throws IOException
+	@Override
+	public void writeFootFallDataToConsoleAsAString(Path pathToFootFallDataFile) throws IOException
 	{
 		try {
 		List<String> allFootFallRecords=getAllFootFallRecordsAsAListOfStrings(pathToFootFallDataFile);
+		System.out.println(allFootFallRecords);
+		String S="";
 		for(String FootFallRecord:allFootFallRecords)
 		{
-			System.out.println(FootFallRecord);
+			S=S+FootFallRecord+'\n';
+			//System.out.println(FootFallRecord);
 		}
+		System.out.print(S);
+		
 		}
 		catch(IOException e)
 		{

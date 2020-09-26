@@ -10,5 +10,5 @@ import java.lang.*;
 import java.util.*;
 public interface IUtilitiesForFootFallData {
 					public List<String> getAllFootFallRecordsAsAListOfStrings(Path pathToFootFallDataFile) throws IOException;
-					public void writeFootFallDataToConsole(Path pathToFootFallDataFile) throws IOException;
+					public void writeFootFallDataToConsoleAsAString(Path pathToFootFallDataFile) throws IOException;
 }
