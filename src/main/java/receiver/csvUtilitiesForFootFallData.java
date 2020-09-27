@@ -42,5 +42,6 @@ public static void main(String args[])
 	
 	FootFallData.add("2020-09-18,12:30:35");
 	System.out.println(csvUtilitiesForFootFallData.getTreeMapOfFootFallData(FootFallData));
+	System.out.println(csvUtilitiesForFootFallData.getTreeMapOfFootFallData(FootFallData).get(17).get(12));
 }
 }
