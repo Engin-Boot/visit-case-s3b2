@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: reciever.aggregateUtilitiesForFootFallDataTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.09 sec <<< FAILURE! - in reciever.aggregateUtilitiesForFootFallDataTest
+test(reciever.aggregateUtilitiesForFootFallDataTest)  Time elapsed: 0.018 sec  <<< FAILURE!
+java.lang.AssertionError: Not yet implemented
+	at reciever.aggregateUtilitiesForFootFallDataTest.test(aggregateUtilitiesForFootFallDataTest.java:11)
+
