@@ -5,9 +5,9 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ Balaram-Workspace ]
+    branches: [ master ]
   pull_request:
-    branches: [ Balaram-Workspace ]
+    branches: [ master ]
 
 jobs:
   build:
