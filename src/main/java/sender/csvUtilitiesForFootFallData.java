@@ -30,7 +30,7 @@ public class csvUtilitiesForFootFallData implements IUtilitiesForFootFallData {
 		String S="";
 		for(String FootFallRecord:allFootFallRecords)
 		{
-			S=S+FootFallRecord+'\n';
+			S=S+FootFallRecord+" ";
 			//System.out.println(FootFallRecord);
 		}
 		System.out.print(S);

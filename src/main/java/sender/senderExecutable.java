@@ -14,8 +14,9 @@ public class senderExecutable {
 		// TODO Auto-generated method stub
 		try {
 		String file=args[0];
-		String pwd=System.getProperty("user.dir");
-		Path p=Paths.get(pwd,"src","main","resources",file);
+		//String pwd=System.getProperty("user.dir");
+		//System.out.println(pwd);
+		Path p=Paths.get("E:","Github-Repos","visit-case-s3b2","src","main","resources",file);
 		IUtilitiesForFootFallData v=new csvUtilitiesForFootFallData();
 		v.writeFootFallDataToConsoleAsAString(p);
 		}
