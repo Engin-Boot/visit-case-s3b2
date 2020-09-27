@@ -81,6 +81,10 @@ for (Map.Entry<Integer,Map<Integer,Integer>> it: s)
 }
 
 }
+for(int i=0;i<24;i++)
+{
+	averageFootFallPerHourInAMonth[i]=averageFootFallPerHourInAMonth[i]/mapOfFootFallData.size();
+}
 System.out.println(Arrays.toString(averageFootFallPerHourInAMonth));
 }
 public static void main(String args[])

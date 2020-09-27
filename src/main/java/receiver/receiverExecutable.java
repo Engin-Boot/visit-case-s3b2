@@ -23,6 +23,7 @@ public class receiverExecutable {
 		{
 			footFallDataAsList.add(temp[i]);
 		}
+		footFallDataAsList.remove(0);
 		//System.out.println(footFallDataAsList);
 		Map<Integer,Map<Integer,Integer>> footFallDataParametersAsMap=csvUtilitiesForFootFallData.getTreeMapOfFootFallData(footFallDataAsList);
 		aggregateUtiltiesForFootFallData.getpeakDailyFootFall(footFallDataParametersAsMap);

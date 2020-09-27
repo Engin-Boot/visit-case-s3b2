@@ -5,7 +5,7 @@ public static int getDayFromFootFallRecord(String validFootFallRecord)
 {
 	String[] validFootFallRecordAsArray=validFootFallRecord.split(",");
 	//List<String> validFootFallRecordAsList=Arrays.asList(validFootFallRecordAsArray);
-	String[] temp=validFootFallRecordAsArray[0].split("-");
+	String[] temp=validFootFallRecordAsArray[0].split("/");
 	
 		   int foo = Integer.parseInt(temp[2]);
 		
