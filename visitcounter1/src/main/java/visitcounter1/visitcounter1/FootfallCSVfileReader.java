@@ -14,7 +14,7 @@ public class FootfallCSVfileReader {
 	}
 	public List<String[]> readCSVfile(){
 	String line = "";  
-	String splitBy = ""; 
+	String splitBy = " "; 
 	List<String[]> footfallData = new ArrayList<String[]>();
 	try   
 	{  
@@ -26,6 +26,7 @@ public class FootfallCSVfileReader {
 	if(data.length>1) 
 	{
 		footfallData.add(data);
+		//System.out.println("asd"+data[0]);
 	}
 	}
 	}   

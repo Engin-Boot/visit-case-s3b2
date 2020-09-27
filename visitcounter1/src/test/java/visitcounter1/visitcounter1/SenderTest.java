@@ -37,5 +37,10 @@ public void fetchNoofRecords() {
 	assertEquals(2,footfallData.size());
 	
 }
+@Test
+public void printFootfallDataonConsole() {
+	FootfallDataConsoleWriter footfall=new FootfallDataConsoleWriter();
+	footfall.consoleWriter();
+}
 
 }
