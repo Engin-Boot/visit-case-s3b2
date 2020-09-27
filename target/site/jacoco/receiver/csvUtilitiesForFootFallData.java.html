@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>csvUtilitiesForFootFallData.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">RecordingVisitCounter</a> &gt; <a href="index.source.html" class="el_package">receiver</a> &gt; <span class="el_source">csvUtilitiesForFootFallData.java</span></div><h1>csvUtilitiesForFootFallData.java</h1><pre class="source lang-java linenums">package receiver;
+import java.lang.*;
+import java.util.*;
+<span class="nc" id="L4">public class csvUtilitiesForFootFallData {</span>
+private List&lt;String&gt; FootFallData;
+public void setFootFallData(List&lt;String&gt; FootFallData)
+{
+<span class="nc" id="L8">	this.FootFallData=FootFallData;</span>
+<span class="nc" id="L9">	}</span>
+public static Map&lt;Integer,Map&lt;Integer,Integer&gt;&gt;getTreeMapOfFootFallData(List&lt;String&gt; FootFallData)
+{
+<span class="nc" id="L12">	Map&lt;Integer,Map&lt;Integer,Integer&gt;&gt; mapOfFootFallData=new TreeMap&lt;Integer,Map&lt;Integer,Integer&gt;&gt;();</span>
+	Map&lt;Integer,Integer&gt; tempInnerMap;
+<span class="nc" id="L14">	int day,hour,count=0;</span>
+<span class="nc bnc" id="L15" title="All 2 branches missed.">	for(String FootFallRecord:FootFallData)</span>
+	{
+<span class="nc" id="L17">		day=csvUtilitiesForFootFallRecord.getDayFromFootFallRecord(FootFallRecord);</span>
+<span class="nc" id="L18">		hour=csvUtilitiesForFootFallRecord.getHourFromFootFallRecord(FootFallRecord);</span>
+<span class="nc bnc" id="L19" title="All 2 branches missed.">		if(mapOfFootFallData.containsKey(day)) {</span>
+<span class="nc" id="L20">			tempInnerMap=mapOfFootFallData.get(day);</span>
+<span class="nc bnc" id="L21" title="All 2 branches missed.">			if(!tempInnerMap.containsKey(hour))</span>
+<span class="nc" id="L22">				tempInnerMap.put(hour,1);</span>
+			else
+<span class="nc" id="L24">				tempInnerMap.put(hour,tempInnerMap.get(hour)+1);</span>
+		}
+		else
+		{
+<span class="nc" id="L28">			tempInnerMap=new TreeMap&lt;Integer,Integer&gt;();</span>
+<span class="nc" id="L29">			tempInnerMap.put(hour,1);</span>
+<span class="nc" id="L30">			mapOfFootFallData.put(day, tempInnerMap);</span>
+				}
+<span class="nc" id="L32">		}</span>
+<span class="nc" id="L33">	return mapOfFootFallData;</span>
+	}
+public static void main(String args[])
+{
+<span class="nc" id="L37">	List &lt;String&gt; FootFallData=new ArrayList &lt;String&gt;();</span>
+<span class="nc" id="L38">	FootFallData.add(&quot;2020-09-18,12:30:35&quot;);</span>
+<span class="nc" id="L39">	FootFallData.add(&quot;2020-09-17,12:30:35&quot;);</span>
+<span class="nc" id="L40">	FootFallData.add(&quot;2020-09-17,12:30:38&quot;);</span>
+<span class="nc" id="L41">	FootFallData.add(&quot;2020-09-17,13:30:35&quot;);</span>
+	
+<span class="nc" id="L43">	FootFallData.add(&quot;2020-09-18,12:30:35&quot;);</span>
+<span class="nc" id="L44">	System.out.println(csvUtilitiesForFootFallData.getTreeMapOfFootFallData(FootFallData));</span>
+<span class="nc" id="L45">	System.out.println(csvUtilitiesForFootFallData.getTreeMapOfFootFallData(FootFallData).get(17).get(12));</span>
+<span class="nc" id="L46">}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
