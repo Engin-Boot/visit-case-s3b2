@@ -23,7 +23,19 @@ public static int getHourFromFootFallRecord(String validFootFallRecord)
 	return foo;
 	//return 0;
 	}
-
+public static boolean validateFootFallRecord(String FootFallRecord)
+{
+	String[] temp=FootFallRecord.split(",");
+	if (temp.length==2) return validateDateOfFootFallRecord(temp[0])&&validTimeOfFootFallRecord(temp[1]);
+	else return false;}
+public static boolean validateDateOfFootFallRecord(String Date)
+{
+	return true;
+}
+public static boolean validTimeOfFootFallRecord(String Time)
+{
+return true;	
+}
 public static void main(String args[])
 {
 	System.out.println(getHourFromFootFallRecord("2020-09-17,12:30:35"));
