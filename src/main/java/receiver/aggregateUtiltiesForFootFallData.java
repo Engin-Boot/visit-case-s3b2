@@ -60,6 +60,29 @@ public static void getAverageDailyFootFallInAWeek(Map<Integer,Map<Integer,Intege
   //averageDailyFootFallInAWeek
   //System.out.println(peakDailyFootFall);
 }
+public static void getAverageFootFallPerHourInAMonth(Map<Integer,Map<Integer,Integer>> mapOfFootFallData)
+{
+	int temp;
+	float[] averageFootFallPerHourInAMonth= {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};	
+Set<Map.Entry<Integer,Map<Integer,Integer>>> s = mapOfFootFallData.entrySet();
+Set<Map.Entry<Integer, Integer>> innerS;
+for (Map.Entry<Integer,Map<Integer,Integer>> it: s)
+{
+	for(temp=0;temp<24;temp++) 
+	{
+		//System.out.println(it.getValue().get(temp));
+		if(it.getValue().get(temp)==null) {;}
+		else
+		{
+			averageFootFallPerHourInAMonth[temp-1]=averageFootFallPerHourInAMonth[temp-1]+it.getValue().get(temp);
+		}
+		//if(System.out.println(it.getValue().get(temp)) != null) System.out.println(it.getValue().get(temp));
+		//averageFootFallPerHourInAMonth[temp]=averageFootFallPerHourInAMonth[temp]+it.getValue().get(temp);}
+}
+
+}
+System.out.println(Arrays.toString(averageFootFallPerHourInAMonth));
+}
 public static void main(String args[])
 {
 	List <String> FootFallData=new ArrayList <String>();
@@ -69,8 +92,9 @@ public static void main(String args[])
 	FootFallData.add("2020-09-17,13:30:35");
 	
 	FootFallData.add("2020-09-18,12:30:35");
-	System.out.println(csvUtilitiesForFootFallData.getTreeMapOfFootFallData(FootFallData));
-	aggregateUtiltiesForFootFallData.getpeakDailyFootFall(csvUtilitiesForFootFallData.getTreeMapOfFootFallData(FootFallData));
-	aggregateUtiltiesForFootFallData.getAverageDailyFootFallInAWeek(csvUtilitiesForFootFallData.getTreeMapOfFootFallData(FootFallData));
+	//System.out.println(csvUtilitiesForFootFallData.getTreeMapOfFootFallData(FootFallData));
+	//aggregateUtiltiesForFootFallData.getpeakDailyFootFall(csvUtilitiesForFootFallData.getTreeMapOfFootFallData(FootFallData));
+	//aggregateUtiltiesForFootFallData.getAverageDailyFootFallInAWeek(csvUtilitiesForFootFallData.getTreeMapOfFootFallData(FootFallData));
+	aggregateUtiltiesForFootFallData.getAverageFootFallPerHourInAMonth(csvUtilitiesForFootFallData.getTreeMapOfFootFallData(FootFallData));
 }
 }
