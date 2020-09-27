@@ -41,14 +41,14 @@ public static void getAverageDailyFootFallInAWeek(Map<Integer,Map<Integer,Intege
     dailyFootFallOverAMonth.put(it.getKey(),temp);
     //if(temp>peakDailyFootFall) peakDailyFootFall=temp;
   }
-  System.out.println(dailyFootFallOverAMonth);
+  //System.out.println(dailyFootFallOverAMonth);
   float averageDailyFootFallInAWeek[]= {0,0,0,0,0};
-  System.out.println(averageDailyFootFallInAWeek);
+  //System.out.println(averageDailyFootFallInAWeek);
   innerS=dailyFootFallOverAMonth.entrySet();
   for(Map.Entry<Integer, Integer> it:innerS)
   {
-	  System.out.println(it.getKey()/7);
-	  System.out.println(it.getValue());
+	 // System.out.println(it.getKey()/7);
+	  //System.out.println(it.getValue());
 	  averageDailyFootFallInAWeek[it.getKey()/7]=averageDailyFootFallInAWeek[it.getKey()/7]+it.getValue();
   }
   for(int j=0;j<5;j++)
