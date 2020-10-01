@@ -1,8 +1,0 @@
-receiver\csvUtilitiesForFootFallRecord.class
-sender\getPathToTheDirectoryOfFootFallDataFile.class
-receiver\aggregateUtiltiesForFootFallData.class
-receiver\receiverExecutable.class
-sender\senderExecutable.class
-sender\IUtilitiesForFootFallData.class
-receiver\csvUtilitiesForFootFallData.class
-sender\csvUtilitiesForFootFallData.class
