@@ -12,7 +12,7 @@ public class executable {
 		System.out.println(s);
 		HLM hlm=new HLM();
 		hlm.setV(new csv());
-		String listofrecords=hlm.getstring();
+		List <String> listofrecords=hlm.getstring();
 	Map <> m=	hlm.getmap(listofrecords);
 	hlm.avgdailyfootfalls();
 	hlm.avhhourlyfootfalls();
