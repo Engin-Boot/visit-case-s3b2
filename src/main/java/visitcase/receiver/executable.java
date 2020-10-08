@@ -16,8 +16,8 @@ public class executable {
 		//BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		//String s=reader.readLine();
 		//System.out.println(s);
-		HLM hlm=new HLM();
-		hlm.setLLM(new LLM());
+		aggregatesForFootFallData hlm=new aggregatesForFootFallData();
+		hlm.setFileType(new csvAggregatesForFootFallData());
 		String st="2020/01/24,10:50:45\r\n"
 				+ "2020/01/24,11:30:50\r\n"
 				+ "2020/01/24,14:05:18\r\n"

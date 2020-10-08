@@ -1,9 +1,9 @@
 package visitcase.receiver;
 
-public class HLM
+public class aggregatesForFootFallData
 {
-private ILLM llm;
-public void setLLM(ILLM llm)
+private IAggregatesForFootFallData llm;
+public void setFileType(IAggregatesForFootFallData llm)
 {
 		this.llm=llm;
 }

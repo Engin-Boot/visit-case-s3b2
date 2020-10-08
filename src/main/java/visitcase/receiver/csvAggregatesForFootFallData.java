@@ -1,7 +1,7 @@
 package visitcase.receiver;
 import java.util.*;
 import   visitcase.receiver.csvFootFallUtils.*;
-public class LLM implements ILLM
+public class csvAggregatesForFootFallData implements IAggregatesForFootFallData
 {
 	
 	
@@ -10,26 +10,21 @@ public class LLM implements ILLM
 	
 	public String peakdailyfootfalls(String st)
 	{
-			Map<Integer,Map<Integer,Integer>> m=mapsForFootFallData.makeTreeMap(st);
+			Map<Integer,Map<Integer,Integer>> treeMapOfDayHourCount=mapsForFootFallData.makeTreeMapOfDayHourCountForFootFallData(st);
 			int peakDailyFootFall=0;
 			int temp;
-			Set<Map.Entry<Integer,Map<Integer,Integer>>> s = m.entrySet();
-			Set<Map.Entry<Integer, Integer>> innerS;
+			Set<Map.Entry<Integer,Map<Integer,Integer>>> s = treeMapOfDayHourCount.entrySet();
+			
 			for (Map.Entry<Integer,Map<Integer,Integer>> it: s)
 			{
-				innerS=it.getValue().entrySet();
-				temp=0;
-				for(Map.Entry<Integer, Integer> innerIterator:innerS)
-				{
-					temp=temp+innerIterator.getValue();
-				}
+				temp=getTotalfootFallsInADay(it.getValue());
 				if(temp>peakDailyFootFall) peakDailyFootFall=temp;
 			}
 			return String.valueOf(peakDailyFootFall);
 	}
 public String avghours(String st)
 {
-	Map<Integer,Map<Integer,Integer>> m=mapsForFootFallData.makeTreeMap(st);
+	Map<Integer,Map<Integer,Integer>> m=mapsForFootFallData.makeTreeMapOfDayHourCountForFootFallData(st);
 	Map<Integer,Integer> dailyFootFallOverAMonth=new TreeMap<Integer,Integer>();
 	  int temp;
 	  Set<Map.Entry<Integer,Map<Integer,Integer>>> s = m.entrySet();
@@ -65,7 +60,7 @@ public String avghours(String st)
 }
 public String getAverageFootFallPerHourInAMonth(String st)
 {
-	Map<Integer,Map<Integer,Integer>> m= mapsForFootFallData.makeTreeMap(st);
+	Map<Integer,Map<Integer,Integer>> m= mapsForFootFallData.makeTreeMapOfDayHourCountForFootFallData(st);
 	int temp;
 	float[] averageFootFallPerHourInAMonth= {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};	
 Set<Map.Entry<Integer,Map<Integer,Integer>>> s = m.entrySet();
@@ -90,4 +85,14 @@ for(int i=0;i<24;i++)
 	averageFootFallPerHourInAMonth[i]=averageFootFallPerHourInAMonth[i]/30;
 }
 return Arrays.toString(averageFootFallPerHourInAMonth);}
+public int getTotalfootFallsInADay(Map<Integer,Integer> mapOfHourCountForThatDay)
+{
+	int temp=0;
+	Set<Map.Entry<Integer, Integer>> innerS=mapOfHourCountForThatDay.entrySet();
+	for(Map.Entry<Integer, Integer> innerIterator:innerS)
+	{
+		temp=temp+innerIterator.getValue();
+	}
+	return temp;
+}
 }
