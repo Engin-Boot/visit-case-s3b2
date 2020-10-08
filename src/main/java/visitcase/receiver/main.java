@@ -1,11 +1,19 @@
 package visitcase.receiver;
 
+import java.io.IOException;
+import java.nio.file.FileSystem;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+import java.nio.file.Files;
+import java.nio.file.StandardOpenOption;
+import java.io.BufferedWriter;
+import java.nio.charset.Charset;
 
 public class main {
 	public static boolean validateDate(String s) throws NumberFormatException
@@ -196,25 +204,21 @@ public class main {
 		averageFootFallPerHourInAMonth[i]=averageFootFallPerHourInAMonth[i]/30;
 	}
 	System.out.println(Arrays.toString(averageFootFallPerHourInAMonth));}
-	public static void main(String[] args) {
-		String s="24:0:0";
-		
-		//List<String> temp1=new ArrayList();
-		avghours("2020/01/24,10:50:45\r\n"
-				+ "2020/01/24,11:30:50\r\n"
-				+ "2020/01/24,14:05:18\r\n"
-				+ "2020/01/25,22:19:59\r\n"
-				+ "2020/01/25,05:10:30\r\n"
-				+ "2020/01/25,06:10:39\r\n"
-				+ "2020/01/2506:10:45");
-		getAverageFootFallPerHourInAMonth("2020/01/24,10:50:45\r\n"
-				+ "2020/01/24,11:30:50\r\n"
-				+ "2020/01/24,14:05:18\r\n"
-				+ "2020/01/25,22:19:59\r\n"
-				+ "2020/01/25,05:10:30\r\n"
-				+ "2020/01/25,06:10:39\r\n"
-				+ "2020/01/2506:10:45");
-		//System.out.println(getMap(temp1));
-	}
 
-}
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		Path path=Paths.get("E:","Github-Repos","visit-case-s3b2","src","main","resources","receiver");
+		//	String pwd=System.getProperty("user.dir");
+		String s=path.toString();
+		Path outputPath=Paths.get(s,"output-peakDailyFootFallInLastMonth.csv");
+		System.out.println(outputPath);
+		Charset charset = Charset.forName("UTF-8");
+		try (BufferedWriter writer = Files.newBufferedWriter(outputPath, charset,StandardOpenOption.CREATE,StandardOpenOption.TRUNCATE_EXISTING,StandardOpenOption.WRITE)) {
+		    writer.write(s, 0, s.length());
+		} catch (IOException x) {
+		    System.err.format("IOExceptiommn: %s%n", x);
+		}
+		}}
+
+
+

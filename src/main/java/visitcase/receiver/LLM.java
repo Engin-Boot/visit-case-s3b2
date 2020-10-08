@@ -105,7 +105,7 @@ public class LLM implements ILLM
 	}
 	return mapOfFootFallData;
 	}
-	public int peakdailyfootfalls(String st)
+	public String peakdailyfootfalls(String st)
 	{
 			Map<Integer,Map<Integer,Integer>> m=getMap(st);
 			int peakDailyFootFall=0;
@@ -122,9 +122,9 @@ public class LLM implements ILLM
 				}
 				if(temp>peakDailyFootFall) peakDailyFootFall=temp;
 			}
-			return peakDailyFootFall;
+			return String.valueOf(peakDailyFootFall);
 	}
-public void avghours(String st)
+public String avghours(String st)
 {
 	Map<Integer,Map<Integer,Integer>> m=getMap(st);
 	Map<Integer,Integer> dailyFootFallOverAMonth=new TreeMap<Integer,Integer>();
@@ -156,11 +156,11 @@ public void avghours(String st)
 	  {
 		  averageDailyFootFallInAWeek[j]=averageDailyFootFallInAWeek[j]/7;
 	  }
-	  System.out.println(Arrays.toString(averageDailyFootFallInAWeek));
+	  return Arrays.toString(averageDailyFootFallInAWeek);
 	 
 	
 }
-public void getAverageFootFallPerHourInAMonth(String st)
+public String getAverageFootFallPerHourInAMonth(String st)
 {
 	Map<Integer,Map<Integer,Integer>> m= getMap(st);
 	int temp;
@@ -186,5 +186,5 @@ for(int i=0;i<24;i++)
 {
 	averageFootFallPerHourInAMonth[i]=averageFootFallPerHourInAMonth[i]/30;
 }
-System.out.println(Arrays.toString(averageFootFallPerHourInAMonth));}
+return Arrays.toString(averageFootFallPerHourInAMonth);}
 }

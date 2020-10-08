@@ -3,28 +3,20 @@ package visitcase.receiver;
 public class HLM
 {
 private ILLM llm;
-public setLLM(LLM llm)
+public void setLLM(ILLM llm)
 {
 		this.llm=llm;
 }
-public List<String> getstring(String s)
+public String getAverageFootFallPerHourInAMonth(String s)
 {
-	return llm.getstring(s);
+	return llm.getAverageFootFallPerHourInAMonth(s);
 }
-public Map<,<>>getmap(List<String> listofrecords)
+public String avghours(String s)
 {
-return llm.getmap(listofrecords);	
+	return llm.avghours(s);
 }
-public String avgdailyfootfalls(map)
+public String peakhourly(String s)
 {
-	return llm.avgdailyfootfalls(map);
-}
-public String avghourly(map)
-{
-	return llm.avghourly(map);
-}
-public String peakhourly(map)
-{
-	return llm.peakhourly(map);
+	return llm.peakdailyfootfalls(s);
 }
 }
