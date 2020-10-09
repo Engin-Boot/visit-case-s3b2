@@ -24,7 +24,7 @@ public class footFallRecordValidator {
 							try{int temp_year=Integer.parseInt(temp[0]);
 							int temp_month=Integer.parseInt(temp[1]);
 							int temp_date=Integer.parseInt(temp[2]);
-							return validateYear(temp_year)&&(validateMonth(temp_month))&&validateDate(temp_date);
+							return (validateMonth(temp_month))&&validateDate(temp_date);
 							} catch(NumberFormatException e) {return false;}
 							
 						}

@@ -75,10 +75,8 @@ for (Map.Entry<Integer,Map<Integer,Integer>> it: s)
 }
 
 }
-for(int i=0;i<24;i++)
-{
-	averageFootFallPerHourInAMonth[i]=averageFootFallPerHourInAMonth[i]/30;
-}
+averageFootFallPerHourInAMonth=divideByCount(averageFootFallPerHourInAMonth,30);
+
 return Arrays.toString(averageFootFallPerHourInAMonth);}
 
 public float[] getAverageFootFallsPerWeekFromTreeMapOfDayCount(Map<Integer,Integer> treeMapOfDayCount)
@@ -93,10 +91,15 @@ public float[] getAverageFootFallsPerWeekFromTreeMapOfDayCount(Map<Integer,Integ
 		  //System.out.println(it.getValue());
 		  averageDailyFootFallInAWeek[it.getKey()/7]=averageDailyFootFallInAWeek[it.getKey()/7]+it.getValue();
 	  }
-	  for(int j=0;j<5;j++)
-	  {
-		  averageDailyFootFallInAWeek[j]=averageDailyFootFallInAWeek[j]/7;
-	  }
+	averageDailyFootFallInAWeek=divideByCount(averageDailyFootFallInAWeek,7);
 return averageDailyFootFallInAWeek;
+}
+public float[] divideByCount(float averageDailyFootFallInAWeek[],int n)
+{
+	  for(int j=0;j<averageDailyFootFallInAWeek.length;j++)
+	  {
+		  averageDailyFootFallInAWeek[j]=averageDailyFootFallInAWeek[j]/n;
+	  }
+	  return averageDailyFootFallInAWeek;
 }
 }
